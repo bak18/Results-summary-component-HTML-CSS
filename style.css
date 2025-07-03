@@ -1,0 +1,250 @@
+html, body{
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(221, 100%, 96%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.summary-compenent{
+  height: 100%;
+  width: 100%;
+}
+
+.left-info{
+  height: 45%;
+  background:  linear-gradient(hsl(252, 100%, 67%),  hsl(241, 81%, 54%));
+  border-radius: 0% 0% 11% 11%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  z-index: 1;
+}
+
+
+.right-info{
+  height: calc(55% + 2em);
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5%;
+  margin-top: -2em;
+}
+
+.your-result{
+  color: hsl(241, 100%, 89%);
+  font-size: clamp(16px, 1.2rem, 32px);
+  font-weight: 500;
+}
+
+.score-zone{
+  width: clamp(50px, 8em, 160px);
+  height: clamp(50px, 8em, 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background:  linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+p, .btn-progress, .summary-title{
+  font-size: clamp(16px, 1em, 25px);
+}
+
+.score, .great{
+  font-size: clamp(18px, 2.5em, 50px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0;
+}
+
+.max-score{
+  margin-top: 0;
+  color: hsl(241, 100%, 89%);
+  font-size: clamp(16px, 1em, 32px);
+}
+
+.great{
+  font-size: clamp(18px, 1.2em, 45px);
+  font-weight: 700;
+  color: white;
+}
+
+.feedback{
+  width: 70%;
+  text-align: center;
+  color: hsl(221, 100%, 96%);
+}
+
+.summary-title{
+  width: 80%;
+  height: 1.5em;
+  font-size: 1.2em;
+  margin-top: 2em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.summary{  
+  width: 80%;
+  display: flex;
+  justify-content: space-between; 
+  border-radius: 10px;
+}
+
+.reaction, .visual, .memory, .verbal{
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  margin-left: 6%;
+}
+
+.container{
+  margin-right: 6%;
+}
+
+.reaction-color{
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+
+.reaction::before{
+  content: url("assets/images/icon-reaction.svg");
+  margin-top: 8%;
+}
+
+.reaction{
+  color: hsl(0, 100%, 67%);
+}
+
+.memory-color{
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.memory{
+  color: hsl(39, 100%, 56%);
+}
+
+.memory::before{
+  content: url("assets/images/icon-memory.svg");
+  margin-top: 8%;
+}
+
+.verbal-color{
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.verbal{
+  color: hsl(166, 100%, 37%);
+}
+
+.verbal::before{
+  content: url("assets/images/icon-verbal.svg");
+  margin-top: 8%;
+}
+
+.visual-color{
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.visual{
+  color: hsl(234, 85%, 45%);
+}
+
+.visual::before{
+  content: url("assets/images/icon-visual.svg");
+  margin-top: 8%;
+}
+
+.container span{
+  font-weight: 800;
+}
+
+.btn-progress{
+  width: 80%;
+  height: 12%;
+  color: white;
+  background-color: hsl(224, 30%, 27%);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.btn-progress:active{
+  background-color: hsl(241, 81%, 54%);
+}
+
+@media (min-width: 1024px){
+  .summary-compenent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-info{
+    width: 25%;
+    height: 70%;
+    border-radius: 2em;
+    margin-right: -2em;
+    margin-top: -2em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .right-info{
+    width: calc(25% + 2em);
+    height: 70%;
+  }
+
+  .summary-title, .summary, .btn-progress{
+    margin-left: 2em;
+  }
+
+ .btn-progress {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+    z-index: 1;
+  }
+
+  .btn-progress::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: hsl(241, 81%, 54%);
+    z-index: 0;
+    transition: width 0.5s ease;
+  }
+
+  .btn-progress:hover::before {
+    width: 100%;
+  }
+
+  .btn-progress span {
+    position: relative;
+    z-index: 1;
+  }
+}
